@@ -1,24 +1,30 @@
-import React, { useState } from "react";
-import { logo } from "../assets/images/images";
+import React, { useEffect, useState } from "react";
+import { archieViewlogoblue, logo } from "../assets/images/images";
 import { navLinks } from "../data/navbarLinks";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const windowLocation = window.location.pathname;
+  const currentLink = navLinks.find((el) => el.path === windowLocation);
+  useEffect(() => {
+    currentLink.active == true;
+  }, []);
   const [sidebarToggle, setSidebarToggle] = useState(false);
   return (
     <>
       <nav className="bg-[#f1f5f9] py-5 px-4 lg:px-8 flex items-center justify-between relative">
         <Link to={"/"}>
-          <img src={logo} className="w-[40px]" alt="" />
+          <img
+            src={archieViewlogoblue}
+            className="w-[100px] md:w-[150px]"
+            alt=""
+          />
         </Link>
         <div className="navLink hidden md:flex items-center gap-4 text-[15px] text-gray-600">
           {navLinks.map((link) => (
             <Link
               className={`py-2.5 ${
-                windowLocation === link.path
-                  ? "bg-white/50 text-blue-500"
-                  : "hover:bg-white/30"
+                link.active ? "bg-white/50 text-blue-500" : ""
               }  hover:text-blue-500 px-4 rounded-full `}
               key={link.id}
               to={link.path}

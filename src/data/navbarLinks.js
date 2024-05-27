@@ -13,14 +13,14 @@ export const navLinks = [
   },
   {
     id: "3",
-    name: "Resources",
-    path: "/resources",
+    name: "Benefits",
+    path: "/benefits",
     active: false,
   },
   {
     id: "4",
-    name: "Contact Us",
-    path: "/contact",
+    name: "Features",
+    path: "/features",
     active: false,
   },
   {

@@ -6,7 +6,9 @@ import Homepage from "./pages/Homepage";
 import Contact from "./pages/Contact";
 import Faq from "./pages/Faq";
 import Workings from "./pages/Workings";
-import Resources from "./pages/Resources";
+import Features from "./pages/Features";
+import Benefits from "./pages/Benefits";
+import About from "./pages/About";
 function App() {
   function HomepageLayout() {
     return (
@@ -40,8 +42,16 @@ function App() {
           element: <Faq />,
         },
         {
-          path: "/resources",
-          element: <Resources />,
+          path: "/features",
+          element: <Features />,
+        },
+        {
+          path: "/benefits",
+          element: <Benefits />,
+        },
+        {
+          path: "/about",
+          element: <About />,
         },
       ],
     },
